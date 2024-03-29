@@ -16,14 +16,14 @@ dataset
 
     ''')
 
-if not os.path.exists('data\wonders_of_world.csv'):
-    with zipfile.ZipFile("data\wonders_of_the_world.zip","r") as zip_ref:
+if not os.path.exists('data/wonders_of_world.csv'):
+    with zipfile.ZipFile("data/wonders_of_the_world.zip","r") as zip_ref:
         zip_ref.extractall("data")
         st.write('Data extracted!')
         st.balloons()
         time.sleep(2)
 
-df = pd.read_csv('data\wonders_of_world.csv')
+df = pd.read_csv('data/wonders_of_world.csv')
 df.drop(columns=['Type'], inplace=True)
 df.drop_duplicates(inplace=True)
 df.reset_index(drop=True, inplace=True)
